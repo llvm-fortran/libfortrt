@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/index.dir/index.cpp.o  -o index -rdynamic ../../liblibflang.a 

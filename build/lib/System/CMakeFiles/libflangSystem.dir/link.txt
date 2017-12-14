@@ -1,2 +1,0 @@
-/usr/bin/ar cr liblibflangSystem.a  CMakeFiles/libflangSystem.dir/System.cpp.o
-/usr/bin/ranlib liblibflangSystem.a
