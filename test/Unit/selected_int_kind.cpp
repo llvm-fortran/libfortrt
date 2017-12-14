@@ -1,4 +1,4 @@
-//===-- selected_int_kind.cpp - Test libflang_selected_int_kind -----------===//
+//===-- selected_int_kind.cpp - Test libfort_selected_int_kind -----------===//
 //
 // The LLVM Compiler Infrastructure
 //
@@ -12,9 +12,9 @@
 #include "Core/Core.h"
 
 static bool test(int32_t x, int32_t expected) {
-  x = libflang_selected_int_kind(x);
+  x = libfort_selected_int_kind(x);
   if(x != expected)
-    std::cout << "Error in libflang_selected_int_kind - expected " << expected
+    std::cout << "Error in libfort_selected_int_kind - expected " << expected
               << ", got " << x << std::endl;
   return x != expected;
 }

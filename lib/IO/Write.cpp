@@ -78,15 +78,15 @@ static inline void SmallPrintf(WriteController *Controller, const char *FMT1, T1
   Buf.Write(Controller);
 }
 
-LIBFLANG_ABI void libflang_write_start(WriteController *Controller) {
+LIBFORT_ABI void libfort_write_start(WriteController *Controller) {
 
 }
 
-LIBFLANG_ABI void libflang_write_integer(WriteController *Controller, const void *Ptr, int32_t Size) {
+LIBFORT_ABI void libfort_write_integer(WriteController *Controller, const void *Ptr, int32_t Size) {
   SmallPrintf(Controller, "%i", getIntValue(Controller, Ptr, Size));
 }
 
-LIBFLANG_ABI void libflang_write_real(WriteController *Controller, const void *Ptr, int32_t Size) {
+LIBFORT_ABI void libfort_write_real(WriteController *Controller, const void *Ptr, int32_t Size) {
   switch(Size) {
   case 4:
     SmallPrintf(Controller, "%g", getValue<float>(Ptr));
@@ -100,7 +100,7 @@ LIBFLANG_ABI void libflang_write_real(WriteController *Controller, const void *P
   }
 }
 
-LIBFLANG_ABI void libflang_write_complex(WriteController *Controller, const void *Ptr, int32_t Size) {
+LIBFORT_ABI void libfort_write_complex(WriteController *Controller, const void *Ptr, int32_t Size) {
   switch(Size) {
   case 4:
     SmallPrintf(Controller, "(%g, ", getValue<float>(Ptr), "%g)", getValue<float>(Ptr,1));
@@ -114,14 +114,14 @@ LIBFLANG_ABI void libflang_write_complex(WriteController *Controller, const void
   }
 }
 
-LIBFLANG_ABI void libflang_write_logical(WriteController *Controller, const void *Ptr, int32_t Size) {
+LIBFORT_ABI void libfort_write_logical(WriteController *Controller, const void *Ptr, int32_t Size) {
   SmallPrintf(Controller, "%s", getIntValue(Controller, Ptr, Size) != 0? "true" : "false");
 }
 
-LIBFLANG_ABI void libflang_write_character(WriteController *Controller, const char *Ptr, size_t Length) {
+LIBFORT_ABI void libfort_write_character(WriteController *Controller, const char *Ptr, size_t Length) {
   fwrite(Ptr, 1, Length, getFilePtr(Controller));
 }
 
-LIBFLANG_ABI void libflang_write_end(WriteController *Controller) {
+LIBFORT_ABI void libfort_write_end(WriteController *Controller) {
   fwrite("\n", 1, 1, getFilePtr(Controller));
 }

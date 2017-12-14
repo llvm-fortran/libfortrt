@@ -7,17 +7,17 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef LLVM_LIBFLANG_CORE_H
-#define LLVM_LIBFLANG_CORE_H
+#ifndef LLVM_LIBFORT_CORE_H
+#define LLVM_LIBFORT_CORE_H
 
-#include "Libflang.h"
+#include "Libfort.h"
 
-LIBFLANG_ABI void  libflang_sys_init();
+LIBFORT_ABI void  libfort_sys_init();
 
-LIBFLANG_ABI void *libflang_malloc(size_t size);
-LIBFLANG_ABI void  libflang_free(void *ptr);
+LIBFORT_ABI void *libfort_malloc(size_t size);
+LIBFORT_ABI void  libfort_free(void *ptr);
 
-LIBFLANG_ABI double libflang_etime(double *time0, double *time1);
-LIBFLANG_ABI float  libflang_etimef(float *time0, float *time1);
+LIBFORT_ABI double libfort_etime(double *time0, double *time1);
+LIBFORT_ABI float  libfort_etimef(float *time0, float *time1);
 
 #endif

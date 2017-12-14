@@ -1,4 +1,4 @@
-//===--- Libflang.h - ------------------------------------------*- C++ -*-===//
+//===--- Libfort.h - ------------------------------------------*- C++ -*-===//
 //
 //                     The LLVM Compiler Infrastructure
 //
@@ -7,10 +7,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef LLVM_LIBFLANG_H
-#define LLVM_LIBFLANG_H
+#ifndef LLVM_LIBFORT_H
+#define LLVM_LIBFORT_H
 
-#define LIBFLANG_ABI extern "C"
+#define LIBFORT_ABI extern "C"
 
 #endif
 

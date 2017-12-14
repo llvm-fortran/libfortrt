@@ -1,3 +1,3 @@
-add_libflang_library(libflangStrings
+add_libfort_library(libfortStrings
   Character.cpp)
 

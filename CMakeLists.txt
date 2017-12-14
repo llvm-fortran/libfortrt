@@ -1,4 +1,4 @@
-project(Libflang)
+project(Libfort)
 cmake_minimum_required(VERSION 2.8)
 
 # Enable C++ 11
@@ -6,9 +6,9 @@ if(NOT MSVC)
   add_definitions(-std=c++11 -fno-exceptions)
 endif()
 
-set(libflang_sources)
+set(libfort_sources)
 
-macro(add_libflang_library name)
+macro(add_libfort_library name)
   set(srcs ${ARGN})
 
   if (MODULE)
@@ -20,7 +20,7 @@ macro(add_libflang_library name)
   endif()
   
   add_library( ${name} ${libkind} ${srcs} )
-endmacro(add_libflang_library)
+endmacro(add_libfort_library)
 
 include_directories(include)
 
@@ -35,7 +35,7 @@ else()
   set(libkind)
 endif()
 
-add_library(libflang ${libkind} lib/Libflang.cpp
+add_library(libfort ${libkind} lib/Libfort.cpp
   lib/Core/Core.cpp
   lib/Numerical/Complex.cpp
   lib/Numerical/Integer.cpp
@@ -44,16 +44,16 @@ add_library(libflang ${libkind} lib/Libflang.cpp
   lib/System/System.cpp
 )
 
-install(TARGETS libflang
+install(TARGETS libfort
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib)
 
 # Tests
-macro(add_libflang_test name)
+macro(add_libfort_test name)
   add_executable( ${name} ${ARGN} )
-  target_link_libraries( ${name} libflang )
-endmacro(add_libflang_test)
+  target_link_libraries( ${name} libfort )
+endmacro(add_libfort_test)
 
 add_subdirectory(test)
 

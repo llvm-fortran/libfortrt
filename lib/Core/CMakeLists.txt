@@ -1,2 +1,2 @@
-add_libflang_library(libflangCore
+add_libfort_library(libfortCore
   Core.cpp)

@@ -7,30 +7,30 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef LLVM_LIBFLANG_STRINGS_CHARACTER_H
-#define LLVM_LIBFLANG_STRINGS_CHARACTER_H
+#ifndef LLVM_LIBFORT_STRINGS_CHARACTER_H
+#define LLVM_LIBFORT_STRINGS_CHARACTER_H
 
 #include <stdint.h>
-#include "Libflang.h"
+#include "Libfort.h"
 
 
-LIBFLANG_ABI void libflang_assignment_char1(char *LHS, size_t LHSLength,
+LIBFORT_ABI void libfort_assignment_char1(char *LHS, size_t LHSLength,
                                             char *RHS, size_t RHSLength);
-LIBFLANG_ABI void libflang_concat_char1(char *Dest, size_t DestLength,
+LIBFORT_ABI void libfort_concat_char1(char *Dest, size_t DestLength,
                                         char *LHS, size_t LHSLength,
                                         char *RHS, size_t RHSLength);
-LIBFLANG_ABI int32_t libflang_compare_char1(const char *LHS, size_t LHSLength,
+LIBFORT_ABI int32_t libfort_compare_char1(const char *LHS, size_t LHSLength,
                                             const char *RHS, size_t RHSLength);
 
 // intrinsics
 
-LIBFLANG_ABI int32_t libflang_lexcompare_char1(const char *LHS, size_t LHSLength,
+LIBFORT_ABI int32_t libfort_lexcompare_char1(const char *LHS, size_t LHSLength,
                                                const char *RHS, size_t RHSLength);
 
-LIBFLANG_ABI size_t libflang_index_char1(const char *String, size_t Length,
+LIBFORT_ABI size_t libfort_index_char1(const char *String, size_t Length,
                                          const char *SubString, size_t SubLength,
                                          int32_t Back);
 
-LIBFLANG_ABI size_t libflang_lentrim_char1(const char *String, size_t Length);
+LIBFORT_ABI size_t libfort_lentrim_char1(const char *String, size_t Length);
 
 #endif

@@ -1,4 +1,4 @@
-//===-- index.cpp - Test libflang_index_char* -----------------------------===//
+//===-- index.cpp - Test libfort_index_char* -----------------------------===//
 //
 // The LLVM Compiler Infrastructure
 //
@@ -13,10 +13,10 @@
 #include "Strings/Character.h"
 
 static bool testIndex(const char *str, const char *substr, size_t expected, bool back = false) {
-  auto x = libflang_index_char1(str, strlen(str), substr, strlen(substr),
+  auto x = libfort_index_char1(str, strlen(str), substr, strlen(substr),
                                 back? 1:0);
   if(x != expected)
-    std::cout << "Error in libflang_index - expected " << expected
+    std::cout << "Error in libfort_index - expected " << expected
               << ", got " << x << std::endl;
   return x != expected;
 }

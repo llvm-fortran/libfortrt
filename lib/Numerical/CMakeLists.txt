@@ -1,3 +1,3 @@
-add_libflang_library(libflangNumerical
+add_libfort_library(libfortNumerical
   Complex.cpp
   Integer.cpp)

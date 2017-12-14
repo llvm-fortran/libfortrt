@@ -136,37 +136,37 @@ static size_t lentrim(const CharacterValue<T> String) {
 
 // core
 
-LIBFLANG_ABI void libflang_assignment_char1(char *LHS, size_t LHSLength,
+LIBFORT_ABI void libfort_assignment_char1(char *LHS, size_t LHSLength,
                                             char *RHS, size_t RHSLength) {
   assign(generic(LHS, LHSLength), generic(RHS, RHSLength));
 }
 
-LIBFLANG_ABI void libflang_concat_char1(char *Dest, size_t DestLength,
+LIBFORT_ABI void libfort_concat_char1(char *Dest, size_t DestLength,
                                         char *LHS, size_t LHSLength,
                                         char *RHS, size_t RHSLength) {
   concat(generic(Dest, DestLength),
          generic(LHS, LHSLength), generic(RHS, RHSLength));
 }
 
-LIBFLANG_ABI int32_t libflang_compare_char1(const char *LHS, size_t LHSLength,
+LIBFORT_ABI int32_t libfort_compare_char1(const char *LHS, size_t LHSLength,
                                             const char *RHS, size_t RHSLength) {
   return compare(generic(LHS, LHSLength), generic(RHS, RHSLength));
 }
 
 // intrinsics
 
-LIBFLANG_ABI int32_t libflang_lexcompare_char1(const char *LHS, size_t LHSLength,
+LIBFORT_ABI int32_t libfort_lexcompare_char1(const char *LHS, size_t LHSLength,
                                                const char *RHS, size_t RHSLength) {
   return lexcompare(generic(LHS, LHSLength), generic(RHS, RHSLength));
 }
 
-LIBFLANG_ABI size_t libflang_index_char1(const char *String, size_t Length,
+LIBFORT_ABI size_t libfort_index_char1(const char *String, size_t Length,
                                          const char *SubString, size_t SubLength,
                                          int32_t Back) {
   return Back == 0? index(generic(String, Length), generic(SubString, SubLength)) :
                     index_reverse(generic(String, Length), generic(SubString, SubLength));
 }
 
-LIBFLANG_ABI size_t libflang_lentrim_char1(const char *String, size_t Length) {
+LIBFORT_ABI size_t libfort_lentrim_char1(const char *String, size_t Length) {
   return lentrim(generic(String, Length));
 }

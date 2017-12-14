@@ -1,4 +1,4 @@
-//===-- ipow.cpp - Test libflang_pow_i*_i* --------------------------------===//
+//===-- ipow.cpp - Test libfort_pow_i*_i* --------------------------------===//
 //
 // The LLVM Compiler Infrastructure
 //
@@ -12,9 +12,9 @@
 #include "Numerical/Integer.h"
 
 static bool testPowI4(int32_t x, int32_t y, int32_t expected) {
-  x = libflang_pow_i4_i4(x, y);
+  x = libfort_pow_i4_i4(x, y);
   if(x != expected)
-    std::cout << "Error in libflang_pow_i4_i4 - expected " << expected
+    std::cout << "Error in libfort_pow_i4_i4 - expected " << expected
               << ", got " << x << std::endl;
   return x != expected;
 }

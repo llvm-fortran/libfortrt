@@ -1,2 +1,2 @@
-add_libflang_library(libflangIO
+add_libfort_library(libfortIO
   Write.cpp)

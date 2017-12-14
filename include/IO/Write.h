@@ -7,11 +7,11 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef LLVM_LIBFLANG_IO_WRITE_H
-#define LLVM_LIBFLANG_IO_WRITE_H
+#ifndef LLVM_LIBFORT_IO_WRITE_H
+#define LLVM_LIBFORT_IO_WRITE_H
 
 #include <stdint.h>
-#include "Libflang.h"
+#include "Libfort.h"
 
 struct WriteController {
   const char *FormatPtr;
@@ -20,12 +20,12 @@ struct WriteController {
   uint32_t flags;
 };
 
-LIBFLANG_ABI void libflang_write_start(WriteController *Controller);
-LIBFLANG_ABI void libflang_write_integer(WriteController *Controller, const void *Ptr, int32_t Size);
-LIBFLANG_ABI void libflang_write_real(WriteController *Controller, const void *Ptr, int32_t Size);
-LIBFLANG_ABI void libflang_write_complex(WriteController *Controller, const void *Ptr, int32_t Size);
-LIBFLANG_ABI void libflang_write_logical(WriteController *Controller, const void *Ptr, int32_t Size);
-LIBFLANG_ABI void libflang_write_character(WriteController *Controller, const char *Ptr, size_t Length);
-LIBFLANG_ABI void libflang_write_end(WriteController *Controller);
+LIBFORT_ABI void libfort_write_start(WriteController *Controller);
+LIBFORT_ABI void libfort_write_integer(WriteController *Controller, const void *Ptr, int32_t Size);
+LIBFORT_ABI void libfort_write_real(WriteController *Controller, const void *Ptr, int32_t Size);
+LIBFORT_ABI void libfort_write_complex(WriteController *Controller, const void *Ptr, int32_t Size);
+LIBFORT_ABI void libfort_write_logical(WriteController *Controller, const void *Ptr, int32_t Size);
+LIBFORT_ABI void libfort_write_character(WriteController *Controller, const char *Ptr, size_t Length);
+LIBFORT_ABI void libfort_write_end(WriteController *Controller);
 
 #endif

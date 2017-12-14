@@ -1,11 +1,11 @@
 #include <cstdlib>
 #include "Core/Core.h"
 
-LIBFLANG_ABI void libflang_stop() {
+LIBFORT_ABI void libfort_stop() {
   exit(0);
 }
 
-LIBFLANG_ABI int32_t libflang_selected_int_kind(int32_t Range) {
+LIBFORT_ABI int32_t libfort_selected_int_kind(int32_t Range) {
   if(Range <= 2)
     return 1;
   else if(Range <= 4)
