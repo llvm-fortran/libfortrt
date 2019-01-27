@@ -51,8 +51,19 @@ install(TARGETS libfort
 
 # Tests
 macro(add_libfort_test name)
+  # Generate CTest tests
+  enable_testing()
+  # Current test set up
   add_executable( ${name} ${ARGN} )
   target_link_libraries( ${name} libfort )
+  # Add to CTest
+  add_test (NAME ${name} COMMAND ${name} ${ARGN})
+  # Create target `check` and make sure it depends on all test executables
+  if (NOT TARGET check)
+    add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND} DEPENDS ${name})
+  else()
+    add_dependencies(check ${name})
+  endif()
 endmacro(add_libfort_test)
 
 add_subdirectory(test)
