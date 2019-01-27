@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <cstring>
+#include <locale>
 #include "Strings/Character.h"
 
 template<typename T>
@@ -32,8 +33,10 @@ CharacterValue<char> generic(char *Ptr, size_t Length) {
 
 
 /// Returns true if a character is a whitespace
-static bool isWhitespace(uint32_t C) {
-  return C == ' '; //FIXME
+template<typename T>
+static bool isWhitespace(T C) {
+  std::locale loc;
+  return (isspace(C, loc));
 }
 
 template<typename T>

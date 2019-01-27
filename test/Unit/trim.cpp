@@ -29,6 +29,12 @@ int main() {
     return 1;
   if(testLenTrim("  HPF  ",5))
     return 1;
+  if(testLenTrim("a dog ",5))
+    return 1;
+  if(testLenTrim("cat\t ",3))
+    return 1;
+  if(testLenTrim("\tcat\t ",4))
+    return 1;
   return 0;
 }
 
