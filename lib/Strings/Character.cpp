@@ -129,7 +129,7 @@ static size_t index_reverse(const CharacterValue<T> String,
 template<typename T>
 static size_t lentrim(const CharacterValue<T> String) {
   for(size_t I = String.Length; I > 0; I--) {
-    if(isWhitespace(String.Ptr[I-1])) return I;
+    if(!isWhitespace(String.Ptr[I-1])) return I;
   }
   return String.Length;
 }
