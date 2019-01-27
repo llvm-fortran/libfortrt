@@ -17,10 +17,6 @@ Building Libfortrt
 > mkdir build
 > cd build & cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
 > cd build & make
+> cd build & make check
 > cd build & make install
 
-
-TODO
-================================
-- IO, Formatted IO.
-- Fortran 90/95 support.
